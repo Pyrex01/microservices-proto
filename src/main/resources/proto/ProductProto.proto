@@ -12,3 +12,14 @@ message ProductProto {
   string description = 3;
   uint32 price = 4;
 }
+
+message GetAllProductsResponse {
+  repeated ProductProto products = 1;
+}
+
+message GetAllProductsRequest  {
+}
+
+service ProductProtoService {
+  rpc getAllProducts(GetAllProductsRequest) returns (GetAllProductsResponse);
+}
